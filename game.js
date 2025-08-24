@@ -5,33 +5,49 @@ const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
 const loader = document.getElementById('loader');
 const game = document.getElementById('game');
+
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
-let availableQuesions = [];
+let availableQuestions = [];
 
-let questions = [];
-
-fetch("questions.json")
-    .then((res) => res.json())
-    .then((loadedQuestions) => {
-        questions = loadedQuestions;
-        startGame();
-    })
-    .catch((err) => {
-        console.error(err);
-    });
-
+// Inline questions array instead of fetching JSON
+let questions = [
+  {
+    "question": "What is Joy's favorite color?",
+    "choice1": "Pink",
+    "choice2": "Blue",
+    "choice3": "Green",
+    "choice4": "Purple",
+    "answer": 1
+  },
+  {
+    "question": "What is Joy's favorite food?",
+    "choice1": "Pizza",
+    "choice2": "Tacos",
+    "choice3": "Sushi",
+    "choice4": "Spaghetti",
+    "answer": 2
+  },
+  {
+    "question": "What is Joy's daughter's name?",
+    "choice1": "Ava",
+    "choice2": "Emma",
+    "choice3": "Sophia",
+    "choice4": "Olivia",
+    "answer": 1
+  }
+];
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = questions.length; // use total number of questions
 
 startGame = () => {
     questionCounter = 0;
     score = 0;
-    availableQuesions = [...questions];
+    availableQuestions = [...questions];
     getNewQuestion();
     game.classList.remove('hidden');
     loader.classList.add('hidden');
@@ -40,11 +56,10 @@ startGame = () => {
 getNewQuestion = () => {
     if (questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
-        // go to the end page
         return window.location.assign('/end.html');
     }
 
-    currentQuestion = questions[questionCounter]; // <- get in order
+    currentQuestion = availableQuestions[questionCounter]; // get in order
     question.innerHTML = currentQuestion.question;
 
     choices.forEach((choice) => {
@@ -87,3 +102,6 @@ incrementScore = (num) => {
     score += num;
     scoreText.innerText = score;
 };
+
+// Start the game immediately
+startGame();
