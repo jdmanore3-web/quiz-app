@@ -1,0 +1,26 @@
+[
+  {
+    "question": "What is Joy's favorite color?",
+    "choice1": "Pink",
+    "choice2": "Blue",
+    "choice3": "Green",
+    "choice4": "Purple",
+    "answer": 1
+  },
+  {
+    "question": "What is Joy's favorite food?",
+    "choice1": "Pizza",
+    "choice2": "Tacos",
+    "choice3": "Sushi",
+    "choice4": "Spaghetti",
+    "answer": 2
+  },
+  {
+    "question": "What is Joy's daughter's name?",
+    "choice1": "Ava",
+    "choice2": "Emma",
+    "choice3": "Sophia",
+    "choice4": "Olivia",
+    "answer": 1
+  }
+]

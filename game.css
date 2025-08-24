@@ -1,0 +1,81 @@
+/* Import Google Font (also include in HTML head) */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+/* Body & Global Styles */
+body {
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(to bottom right, #fff0f5, #f8e1f7);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Game Container */
+.container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(221, 160, 221, 0.3);
+    width: 400px;
+}
+
+/* Loader */
+#loader {
+    border: 1.6rem solid white;
+    border-radius: 50%;
+    border-top: 1.6rem solid #d291bc;
+    width: 12rem;
+    height: 12rem;
+    animation: spin 2s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Question */
+#question {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    text-align: center;
+    color: #d36fa6;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(211, 111, 166, 0.5);
+}
+
+/* Choices */
+.choice-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgba(221, 160, 221, 0.25);
+    background-color: #fff0f5;
+    border-radius: 8px;
+    transition: transform 150ms, box-shadow 150ms;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(255, 182, 193, 0.5);
+    transform: translateY(-0.1rem);
+}
+
+.choice-prefix {
+    padding: 1.5rem 2.5rem;
+    background-color: #d291bc;
+    color: white;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.choice-text {
+    padding: 1.5rem;
+    width: 100%;
+    fon
