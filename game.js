@@ -13,7 +13,7 @@ let availableQuesions = [];
 
 let questions = [];
 
-fetch('questions.json')
+fetch("questions.json")
     .then((res) => res.json())
     .then((loadedQuestions) => {
         questions = loadedQuestions;
